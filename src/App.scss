@@ -1,0 +1,16 @@
+@import "./assets/variables.scss";
+
+.App {
+  background-color: #047c90;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.questions {
+  padding: 20px $app-padding;
+}
+
+
+.disabled {
+opacity: 0.5;
+}
