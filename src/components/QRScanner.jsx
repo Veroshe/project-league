@@ -16,7 +16,7 @@ export const QRScanner = ({storageKey, handleClose}) => {
           handleClose();
         }
       }}
-      facingMode="front"
+      constraints={{facingMode: "environment"}}
     />
   );
 };
