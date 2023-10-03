@@ -2,7 +2,7 @@ import QrReader from "react-qr-scanner";
 import useLocalStorage from "use-local-storage";
 
 export const QRScanner = ({storageKey, handleClose}) => {
-  const [key, setKey] = useLocalStorage(storageKey);
+  const [key, setKey] = useLocalStorage(storageKey, "set");
 
   return (
     <QrReader
@@ -16,7 +16,6 @@ export const QRScanner = ({storageKey, handleClose}) => {
           handleClose();
         }
       }}
-      constraints={{facingMode: "environment"}}
     />
   );
 };
