@@ -8,29 +8,35 @@ import useLocalStorage from "use-local-storage";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import {cardStyles, cardActionsStyles} from "./cardStyles";
 import Typography from "@mui/material/Typography";
 
-export const QuizCard = ({storageKey, question, answers, goodAnswer}) => {
+export const QuizCard = ({
+  storageKey,
+  question,
+  answers,
+  goodAnswer,
+  number,
+  increaseQuestsCounter,
+}) => {
   const [value, setValue] = useState(null);
   const [key, setKey] = useLocalStorage(storageKey, "");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (value === goodAnswer) {
-      console.log("Good!");
-      setKey("set");
+      await setKey("set");
+      increaseQuestsCounter();
     }
   };
   return (
     <Card sx={cardStyles} className={key && "disabled"}>
       <CardContent>
-        <Typography variant="h3">Zadanie 1 {key && "- wykonane"}</Typography>
+        <Typography variant="h3">
+          Zadanie {number} {key && "- wykonane"}
+        </Typography>
         <FormControl>
-          <FormLabel id={question} color="primary">
+          <FormLabel id={question} color="primary" sx={{color: "#fff"}}>
             {question}
           </FormLabel>
           <RadioGroup

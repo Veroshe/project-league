@@ -9,7 +9,7 @@ import {QRScanner} from "./QRScanner";
 import useLocalStorage from "use-local-storage";
 import {cardStyles, cardActionsStyles} from "./cardStyles";
 
-export const QRCard = ({storageKey}) => {
+export const QRCard = ({storageKey, increaseQuestsCounter}) => {
   const [openModal, setOpenModal] = useState(false);
   const [key] = useLocalStorage(storageKey);
 
@@ -23,11 +23,12 @@ export const QRCard = ({storageKey}) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div>
+        <div className="scanner">
           <QRScanner
             storageKey={storageKey}
             handleClose={() => {
               setOpenModal(false);
+              increaseQuestsCounter();
             }}
           />
         </div>
@@ -36,7 +37,8 @@ export const QRCard = ({storageKey}) => {
         <CardContent>
           <Typography variant="h3">Zadanie 1 {key && "- wykonane"}</Typography>
           <Typography>
-            Zeskanuj kod QR pod Teemo na stoisku blah blah blah
+            Znajdź Teemo z kodem QR i zeskanuj go (Psst! Poszukaj koło
+            strzelnicy)
           </Typography>
         </CardContent>
         <CardActions sx={cardActionsStyles}>

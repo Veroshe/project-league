@@ -2,6 +2,9 @@
 
 .App {
   background-color: #047c90;
+  background-image: url("./assets/tlo.png");
+  background-repeat: no-repeat;
+      background-size: cover;
   min-height: 100vh;
   height: 100%;
 }
@@ -13,4 +16,28 @@
 
 .disabled {
 opacity: 0.5;
+}
+
+
+.scanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  video {
+    width: 100%;
+  }
+}
+
+.happy {
+  text-align: center;
+
+  .header-text {
+    align-items: center;
+  }
+  
+  .happy-icon {
+    margin-top: 50px;
+  }
 }
