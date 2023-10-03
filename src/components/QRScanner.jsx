@@ -16,6 +16,7 @@ export const QRScanner = ({storageKey, handleClose}) => {
           handleClose();
         }
       }}
+      facingMode="rear"
     />
   );
 };
