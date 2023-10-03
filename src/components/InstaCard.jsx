@@ -13,7 +13,7 @@ export const InstaCard = ({storageKey, increaseQuestsCounter}) => {
   return (
     <Card sx={cardStyles} className={key && "disabled"}>
       <CardContent>
-        <Typography variant="h3">Zadanie 2 {key && "- wykonane"}</Typography>
+        <Typography variant="h3">Zadanie 1 {key && "- wykonane"}</Typography>
         <Typography>Zaobserwuj nas na Instagramie!</Typography>
       </CardContent>
       <CardActions sx={cardActionsStyles}>

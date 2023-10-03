@@ -32,10 +32,6 @@ function App() {
       <HeaderText />
 
       <div className="questions">
-        <QRCard
-          storageKey={`kantor - ${today}`}
-          increaseQuestsCounter={increaseQuestsCounter}
-        />
         <InstaCard
           storageKey={`insta - ${today}`}
           increaseQuestsCounter={increaseQuestsCounter}
@@ -49,7 +45,7 @@ function App() {
                 answers={quest.answers}
                 goodAnswer={quest.goodAnswer}
                 storageKey={quest.storageKey}
-                number={index + 3}
+                number={index + 2}
                 increaseQuestsCounter={increaseQuestsCounter}
               />
             );
