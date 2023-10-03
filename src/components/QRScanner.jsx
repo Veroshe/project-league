@@ -2,7 +2,7 @@ import QrReader from "react-qr-scanner";
 import useLocalStorage from "use-local-storage";
 
 export const QRScanner = ({storageKey, handleClose}) => {
-  const [setKey] = useLocalStorage(storageKey, "set");
+  const [key, setKey] = useLocalStorage(storageKey, "set");
 
   return (
     <QrReader
