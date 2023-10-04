@@ -1,5 +1,5 @@
-import fizz from "./assets/fizz.png";
-import evelynn from "./assets/evelynn.png";
+import fizz from "./assets/Fizz.png";
+import evelynn from "./assets/Evelynn.png";
 
 const ImageQuestion = ({imgSrc}) => (
   <div className="image-question">
@@ -9,11 +9,15 @@ const ImageQuestion = ({imgSrc}) => (
 );
 
 export const QUESTS = {
-  "03/10/2023": [
+  "04/10/2023": [
     {
       type: "quiz",
-      question:
-        "Znajdź Teemo ukrytego gdzieś na naszej wiosce i zaznacz gdzie się znajduje",
+      question: (
+        <p>
+          Znajdź Teemo ukrytego gdzieś na naszej wiosce i zaznacz gdzie się
+          znajduje
+        </p>
+      ),
       answers: [
         "na strzelnicy",
         "w dupie Kanto",
@@ -21,28 +25,28 @@ export const QUESTS = {
         "w cycach Bisz :3",
       ],
       goodAnswer: "w dupie Kanto",
-      storageKey: "quest1 - 03/10/2023",
+      storageKey: "quest1 - 04/10/2023",
     },
     {
       type: "quiz",
-      question: "Kto z tych cosplayerów NIE należy do Project: League",
+      question: <p>Kto z tych cosplayerów NIE należy do Project: League</p>,
       answers: ["Kanto", "Tyna", "Kamui", "Laf"],
       goodAnswer: "Kamui",
-      storageKey: "quest2 - 03/10/2023",
+      storageKey: "quest2 - 04/10/2023",
     },
     {
       type: "quiz",
       question: <ImageQuestion imgSrc={fizz} />,
       answers: ["Fizz", "Nami", "Nautilus", "Nilah"],
       goodAnswer: "Fizz",
-      storageKey: "quest3 - 03/10/2023",
+      storageKey: "quest3 - 04/10/2023",
     },
     {
       type: "quiz",
       question: <ImageQuestion imgSrc={evelynn} />,
       answers: ["Vayne", "Evelynn", "Elise", "Bel'Veth"],
       goodAnswer: "Evelynn",
-      storageKey: "quest4 - 03/10/2023",
+      storageKey: "quest4 - 04/10/2023",
     },
   ],
 };

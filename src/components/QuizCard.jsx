@@ -23,6 +23,9 @@ export const QuizCard = ({
   const [value, setValue] = useState(null);
   const [key, setKey] = useLocalStorage(storageKey, "");
 
+  console.log(storageKey);
+  console.log(key);
+
   const handleSubmit = async () => {
     if (value === goodAnswer) {
       await setKey("set");
@@ -49,6 +52,8 @@ export const QuizCard = ({
                 control={<Radio />}
                 label={answer}
                 key={answer}
+                disabled={key === "set"}
+                sx={{marginTop: "10px", marginBottom: "10px"}}
               />
             ))}
           </RadioGroup>
