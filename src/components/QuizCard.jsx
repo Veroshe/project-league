@@ -22,18 +22,23 @@ export const QuizCard = ({
 }) => {
   const [value, setValue] = useState(null);
   const [key, setKey] = useLocalStorage(storageKey, "");
+  const [error, setError] = useState(false);
 
   console.log(storageKey);
   console.log(key);
+  console.log(error);
 
   const handleSubmit = async () => {
     if (value === goodAnswer) {
       await setKey("set");
       increaseQuestsCounter();
+      setError(false);
+    } else {
+      setError(true);
     }
   };
   return (
-    <Card sx={cardStyles} className={key && "disabled"}>
+    <Card sx={cardStyles} className={[key && "disabled", error && "error"]}>
       <CardContent>
         <Typography variant="h3">
           Zadanie {number} {key && "- wykonane"}
@@ -44,7 +49,10 @@ export const QuizCard = ({
           </FormLabel>
           <RadioGroup
             name={question}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => {
+              setValue(e.target.value);
+              setError(false);
+            }}
           >
             {answers.map((answer) => (
               <FormControlLabel
