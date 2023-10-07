@@ -89,7 +89,7 @@ export const QUESTS = {
       type: "quiz",
       question: <ImageQuestion imgSrc={bard} />,
       answers: ["Wukong", "Maokai", "Milo", "Bard"],
-      goodAnswer: "Evelynn",
+      goodAnswer: "Bard",
       storageKey: "quest4 - 07/10/2023",
     },
   ],
