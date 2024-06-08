@@ -9,6 +9,8 @@ import useLocalStorage from "use-local-storage";
 import {Happy} from "./components/Happy";
 import {HeaderText} from "./components/HeaderText";
 
+import LandingPage from "./components/landing-page/LandingPage";
+
 function App() {
   const today = getToday();
   const [key, setKey] = useLocalStorage(`quests all - ${today}`, 0);
@@ -26,33 +28,7 @@ function App() {
     );
   }
 
-  return (
-    <div className="App">
-      <Header />
-      <HeaderText />
-
-      <div className="questions">
-        <InstaCard
-          storageKey={`insta - ${today}`}
-          increaseQuestsCounter={increaseQuestsCounter}
-        />
-        {QUESTS[today] &&
-          QUESTS[today].map((quest, index) => {
-            return (
-              <QuizCard
-                key={quest.goodAnswer}
-                question={quest.question}
-                answers={quest.answers}
-                goodAnswer={quest.goodAnswer}
-                storageKey={quest.storageKey}
-                number={index + 2}
-                increaseQuestsCounter={increaseQuestsCounter}
-              />
-            );
-          })}
-      </div>
-    </div>
-  );
+  return <LandingPage />;
 }
 
 export default App;
