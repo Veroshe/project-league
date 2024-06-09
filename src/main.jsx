@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import {ThemeProvider} from "@emotion/react";
 import {createTheme} from "@mui/material";
 import "./index.css";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import LandingPage from "./components/landing-page/LandingPage";
+import App from "./App.jsx";
+import Quiz from "./components/Quiz.jsx";
 
 const theme = createTheme({
   typography: {
@@ -50,10 +53,26 @@ const theme = createTheme({
   },
 });
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/quiz",
+        element: <Quiz />,
+      },
+    ],
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );

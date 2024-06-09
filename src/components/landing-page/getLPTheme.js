@@ -2,29 +2,29 @@ import {alpha} from "@mui/material/styles";
 import {red} from "@mui/material/colors";
 
 export const brand = {
-  50: "#e2e6eb",
-  100: "#b6c0ce",
-  200: "#8897ad",
-  300: "#5d708c",
-  400: "#3c5477",
-  500: "#153a65",
-  600: "#0e345d",
-  700: "#052b53",
-  800: "#002347",
-  900: "#001330",
+  50: "#efece0",
+  100: "#d9cfb0",
+  200: "#c1af7f",
+  300: "#ad924a",
+  400: "#a17f1e",
+  500: "#966c00",
+  600: "#946400",
+  700: "#8f5800",
+  800: "#894b00",
+  900: "#803700",
 };
 
 export const secondary = {
-  50: "#F9F0FF",
-  100: "#E9CEFD",
-  200: "#D49CFC",
-  300: "#B355F6",
-  400: "#750AC2",
-  500: "#6709AA",
-  600: "#490679",
-  700: "#3B0363",
-  800: "#2F024F",
-  900: "#23023B",
+  50: "#F0F7FF",
+  100: "#CEE5FD",
+  200: "#9CCCFC",
+  300: "#55A6F6",
+  400: "#0A66C2",
+  500: "#0959AA",
+  600: "#064079",
+  700: "#033363",
+  800: "#02294F",
+  900: "#021F3B",
 };
 
 export const gray = {
@@ -71,11 +71,11 @@ const getDesignTokens = (mode) => ({
     secondary: {
       light: secondary[300],
       main: secondary[500],
-      dark: secondary[800],
+      dark: secondary[500],
       ...(mode === "dark" && {
         light: secondary[400],
         main: secondary[500],
-        dark: secondary[900],
+        dark: secondary[700],
       }),
     },
     warning: {
@@ -119,18 +119,17 @@ const getDesignTokens = (mode) => ({
     background: {
       default: "#fff",
       paper: gray[50],
-      ...(mode === "dark" && {default: gray[900], paper: gray[800]}),
+      ...(mode === "dark" && {
+        default: alpha(secondary[700], 0.1),
+        paper: gray[800],
+      }),
     },
     text: {
-      primary: gray[800],
-      secondary: gray[600],
-      ...(mode === "dark" && {primary: "#fff", secondary: gray[400]}),
+      primary: "#fff",
+      secondary: gray[300],
     },
     action: {
-      selected: `${alpha(brand[200], 0.2)}`,
-      ...(mode === "dark" && {
-        selected: alpha(brand[800], 0.2),
-      }),
+      selected: `${alpha(secondary[800], 0.2)}`,
     },
   },
   typography: {
@@ -276,7 +275,7 @@ export default function getLPTheme(mode) {
             boxSizing: "border-box",
             transition: "all 100ms ease-in",
             "&:focus-visible": {
-              outline: `3px solid ${alpha(brand[500], 0.5)}`,
+              outline: `1px solid ${brand[200]}`,
               outlineOffset: "2px",
             },
           },
@@ -301,10 +300,9 @@ export default function getLPTheme(mode) {
             ...(ownerState.variant === "contained" &&
               ownerState.color === "primary" && {
                 color: brand[50],
-                background: brand[500],
-                backgroundImage: `linear-gradient(to bottom, ${brand[400]}, ${brand[600]})`,
-                boxShadow: `inset 0 1px ${alpha(brand[300], 0.4)}`,
-                outline: `1px solid ${brand[700]}`,
+                background: secondary[500],
+                boxShadow: `inset 0 1px ${alpha(secondary[300], 0.4)}`,
+                outline: `1px solid ${secondary[700]}`,
                 "&:hover": {
                   background: brand[400],
                   backgroundImage: "none",
@@ -321,10 +319,10 @@ export default function getLPTheme(mode) {
               },
             }),
             ...(ownerState.variant === "text" && {
-              color: brand[500],
+              color: secondary[500],
               "&:hover": {
-                backgroundColor: alpha(brand[300], 0.3),
-                borderColor: brand[200],
+                backgroundColor: alpha(secondary[300], 0.3),
+                borderColor: brand[700],
               },
             }),
             ...(theme.palette.mode === "dark" && {
@@ -338,9 +336,9 @@ export default function getLPTheme(mode) {
                 },
               }),
               ...(ownerState.variant === "text" && {
-                color: brand[300],
+                color: secondary[300],
                 "&:hover": {
-                  backgroundColor: alpha(brand[600], 0.3),
+                  backgroundColor: alpha(secondary[600], 0.3),
                   borderColor: brand[700],
                 },
               }),

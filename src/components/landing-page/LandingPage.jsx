@@ -65,18 +65,15 @@ export default function LandingPage() {
   const LPtheme = createTheme(getLPTheme("dark"));
 
   return (
-    <ThemeProvider theme={LPtheme}>
-      <CssBaseline />
-      <AppAppBar />
+    <>
       <Hero />
       <Box sx={{bgcolor: "background.default"}}>
         <Features />
-        <Divider />
+
         <Testimonials />
-        <Divider />
         <Divider />
         <Footer />
       </Box>
-    </ThemeProvider>
+    </>
   );
 }

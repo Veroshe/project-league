@@ -13,6 +13,7 @@ import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
 import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
 import kogMaw from "../../../assets/Kog'Maw.png";
+import {cardStyles} from "../../cardStyles";
 
 const items = [
   {
@@ -107,6 +108,7 @@ export default function Features() {
             sx={{
               display: {xs: "auto", sm: "none"},
               mt: 4,
+              border: "1px solid #C1AF7F",
             }}
           >
             <Box
@@ -171,16 +173,7 @@ export default function Features() {
                   background: "none",
                   backgroundColor:
                     selectedItemIndex === index ? "action.selected" : undefined,
-                  borderColor: (theme) => {
-                    if (theme.palette.mode === "light") {
-                      return selectedItemIndex === index
-                        ? "primary.light"
-                        : "grey.200";
-                    }
-                    return selectedItemIndex === index
-                      ? "primary.dark"
-                      : "grey.800";
-                  },
+                  border: "1px solid #C1AF7F",
                 }}
               >
                 <Box

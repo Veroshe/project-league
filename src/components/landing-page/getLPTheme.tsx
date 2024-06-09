@@ -21,16 +21,16 @@ declare module "@mui/material/styles/createPalette" {
 }
 
 export const brand = {
-  50: "#F0F7FF",
-  100: "#CEE5FD",
-  200: "#9CCCFC",
-  300: "#55A6F6",
-  400: "#0A66C2",
-  500: "#0959AA",
-  600: "#064079",
-  700: "#033363",
-  800: "#02294F",
-  900: "#021F3B",
+  50: "#efece0",
+  100: "#d9cfb0",
+  200: "#c1af7f",
+  300: "#ad924a",
+  400: "#a17f1e",
+  500: "#966c00",
+  600: "#946400",
+  700: "#8f5800",
+  800: "#894b00",
+  900: "#803700",
 };
 
 export const secondary = {

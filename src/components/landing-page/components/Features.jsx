@@ -27,7 +27,7 @@ const items = [
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: "Mobile integration",
+    title: "Strzelnica",
     description:
       "This item could provide information about the mobile app version of the product.",
     imageLight:
@@ -172,15 +172,10 @@ export default function Features() {
                   background: "none",
                   backgroundColor:
                     selectedItemIndex === index ? "action.selected" : undefined,
-                  borderColor: (theme) => {
-                    if (theme.palette.mode === "light") {
-                      return selectedItemIndex === index
-                        ? "primary.light"
-                        : "grey.200";
-                    }
+                  borderColor: () => {
                     return selectedItemIndex === index
-                      ? "primary.dark"
-                      : "grey.800";
+                      ? "#C1AF7F"
+                      : "secondary.dark";
                   },
                 }}
               >

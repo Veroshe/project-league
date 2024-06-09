@@ -1,8 +1,8 @@
-import "./App.scss";
+import "../App.scss";
 import {QuizCard} from "./QuizCard";
 import {Header} from "./Header";
-import {getToday} from "./helpers";
-import {QUESTS} from "./quests";
+import {getToday} from "../helpers";
+import {QUESTS} from "../quests";
 import {InstaCard} from "./InstaCard";
 import useLocalStorage from "use-local-storage";
 import {Happy} from "./Happy";
@@ -27,9 +27,6 @@ function Quiz() {
 
   return (
     <div className="App">
-      <Header />
-      <HeaderText />
-
       <div className="questions">
         <InstaCard
           storageKey={`insta - ${today}`}

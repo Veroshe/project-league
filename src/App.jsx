@@ -1,34 +1,22 @@
-import "./App.scss";
-import {QRCard} from "./components/QRCard";
-import {QuizCard} from "./components/QuizCard";
-import {Header} from "./components/Header";
-import {getToday} from "./helpers";
-import {QUESTS} from "./quests";
-import {InstaCard} from "./components/InstaCard";
-import useLocalStorage from "use-local-storage";
-import {Happy} from "./components/Happy";
-import {HeaderText} from "./components/HeaderText";
+import CssBaseline from "@mui/material/CssBaseline";
+import {ThemeProvider, createTheme} from "@mui/material/styles";
+import {Box} from "@mui/material";
+import AppAppBar from "./components/landing-page/components/AppAppBar";
+import getLPTheme from "./components/landing-page/getLPTheme";
+import {Outlet} from "react-router-dom";
+import Hero from "./components/landing-page/components/Hero";
+import tlo from "./assets/tlo.png";
 
-import LandingPage from "./components/landing-page/LandingPage";
+export default function App() {
+  const LPtheme = createTheme(getLPTheme("dark"));
 
-function App() {
-  const today = getToday();
-  const [key, setKey] = useLocalStorage(`quests all - ${today}`, 0);
-
-  const increaseQuestsCounter = () => {
-    setKey(key + 1);
-  };
-
-  if (key === 5) {
-    return (
-      <div className="App">
-        <Header />
-        <Happy />
-      </div>
-    );
-  }
-
-  return <LandingPage />;
+  return (
+    <ThemeProvider theme={LPtheme}>
+      <CssBaseline />
+      <Box className="app-container">
+        <AppAppBar />
+        <Outlet />
+      </Box>
+    </ThemeProvider>
+  );
 }
-
-export default App;
