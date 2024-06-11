@@ -16,7 +16,7 @@ const router = createHashRouter([
         element: <LandingPage />,
       },
       {
-        path: "quiz",
+        path: "/quiz",
         element: <Quiz />,
       },
     ],
