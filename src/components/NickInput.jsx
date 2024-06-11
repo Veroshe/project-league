@@ -26,7 +26,7 @@ export const NickInput = () => {
           size="small"
           variant="outlined"
           aria-label="Nick"
-          placeholder="Hermedinger"
+          placeholder="Heimerdinger"
           onChange={(e) => setNewNick(e.target.value)}
         />
       </CardContent>
