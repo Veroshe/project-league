@@ -50,7 +50,8 @@ export default function Hero() {
             sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
             variant="subtitle1"
           >
-            Granie w lola jest fajne, jakiś tekst tutaj fajny trzeba dać!
+            Granie w lola jest fajne, jakiś tekst tutaj fajny trzeba dać! Jasiu
+            to król.
           </Typography>
           <Stack
             direction={{xs: "column", sm: "row"}}
