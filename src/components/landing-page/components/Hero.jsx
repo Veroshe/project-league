@@ -1,14 +1,10 @@
 import "./hero.scss";
-import * as React from "react";
 import {alpha} from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import heroImage from "../../../assets/hero.png";
 
 export default function Hero() {
   return (
@@ -41,7 +37,7 @@ export default function Hero() {
               flexDirection: {xs: "column", md: "row"},
               alignSelf: "center",
               textAlign: "center",
-              fontSize: "clamp(3.5rem, 10vw, 4rem)",
+              fontSize: "clamp(2.25rem, 10vw, 4rem)",
               fontFamily: "Earth Orbiter Bold",
               color: "#e4bf62",
             }}
@@ -63,19 +59,7 @@ export default function Hero() {
             useFlexGap
             sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
           >
-            {/* <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              inputProps={{
-                autoComplete: "off",
-                "aria-label": "Enter your email address",
-              }}
-            /> */}
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" href="/quiz">
               Podejmij wyzwanie
             </Button>
           </Stack>
@@ -87,7 +71,6 @@ export default function Hero() {
             alignSelf: "center",
             height: {xs: 200, sm: 700},
             width: "100%",
-            // backgroundImage: heroImage,
             backgroundSize: "cover",
             borderRadius: "10px",
             outline: "1px solid",

@@ -10,7 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import {cardStyles, cardActionsStyles} from "./cardStyles";
 import useLocalStorageState from "use-local-storage-state";
-import {QUIZ_QUESTS} from "../quests";
+import {EMOJI_QUESTS} from "../quests";
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -24,11 +24,11 @@ const isToday = (date) => {
   );
 };
 
-export const QuizCard = () => {
-  const [quiz, setQuiz] = useLocalStorageState("quiz", {
+export const EmojiCard = () => {
+  const [quiz, setQuiz] = useLocalStorageState("emoji", {
     defaultValue: [
       {
-        id: getRandomInt(QUIZ_QUESTS.length),
+        id: getRandomInt(EMOJI_QUESTS.length),
         date: todaysDate,
         done: false,
       },
@@ -43,7 +43,7 @@ export const QuizCard = () => {
       setQuiz([
         ...quiz,
         {
-          id: getRandomInt(QUIZ_QUESTS.length),
+          id: getRandomInt(EMOJI_QUESTS.length),
           date: todaysDate,
           done: false,
         },
@@ -53,11 +53,13 @@ export const QuizCard = () => {
 
   const todaysQuestion = quiz.find((el) => isToday(el.date));
 
-  const quizQuestion = todaysQuestion && QUIZ_QUESTS[todaysQuestion.id];
+  console.log(todaysQuestion);
+
+  const quizQuestion = todaysQuestion && EMOJI_QUESTS[todaysQuestion.id];
 
   const handleSubmit = () => {
     if (value === quizQuestion.goodAnswer) {
-      const el = quiz.find((el) => el.id === todaysQuestion?.id);
+      const el = quiz.find((el) => el.id === todaysQuestion.id);
       const xd = {
         ...el,
         done: true,
@@ -65,6 +67,7 @@ export const QuizCard = () => {
       const newKey = quiz;
       newKey[quiz.indexOf(el)] = xd;
 
+      console.log(newKey);
       setQuiz(newKey);
       setError(false);
     } else {

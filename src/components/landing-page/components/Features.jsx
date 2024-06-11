@@ -9,39 +9,51 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
+import QuizIcon from "@mui/icons-material/Quiz";
 import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
-import EdgesensorHighRoundedIcon from "@mui/icons-material/EdgesensorHighRounded";
-import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import PetsIcon from "@mui/icons-material/Pets";
+import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import kogMaw from "../../../assets/Kog'Maw.png";
+import PeopleIcon from "@mui/icons-material/People";
+import ExtensionIcon from "@mui/icons-material/Extension";
 
 const items = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: "Wystawa",
+    icon: <QuizIcon />,
+    title: "Matura",
     description:
-      "This item could provide a snapshot of the most important metrics or data points related to the product.",
-    imageLight:
-      'url("/static/images/templates/templates-images/dash-light.png")',
+      "Śledzisz zacięcie scenę e-sportowa? Masz świra na punkcie ligowego lore? Sprawdź swoją wiedzę w tych, oraz wielu innych dziedzinach, dzięki przygotowanych przez nas i naszych gości maturach!",
     imageDark: kogMaw,
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
+    icon: <TrackChangesIcon />,
     title: "Strzelnica",
     description:
-      "This item could provide information about the mobile app version of the product.",
-    imageLight:
-      'url("/static/images/templates/templates-images/mobile-light.png")',
+      "Wciel się w rolę adc i poczuj dreszczyk emocji rozprawiając się z minionami na lini w świecie rzeczywistym!",
     imageDark:
       'url("/static/images/templates/templates-images/mobile-dark.png")',
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: "Available on all platforms",
+    icon: <PetsIcon />,
+    title: "Yuumi",
     description:
-      "This item could let users know the product is available on all platforms, such as web, mobile, and desktop.",
-    imageLight:
-      'url("/static/images/templates/templates-images/devices-light.png")',
+      "Celnosc ataków to podstawa! Sprawdź jak sobie poradzisz w starciu z Yuumi i rzutami do ruchomych celów!",
+    imageDark:
+      'url("/static/images/templates/templates-images/devices-dark.png")',
+  },
+  {
+    icon: <PeopleIcon />,
+    title: "Goście wioski",
+    description:
+      "W naszym programie czekają na ciebie spotkania i konkursy z gośćmi wioski. To świetna okazja aby poznać kulisy pracy stremeróww, youtuberów, a nawet casterów! Sprawdź rozpiskę godzinową i weź udzial w spotkaniach oraz quizach z nagrodami na żywo!",
+    imageDark:
+      'url("/static/images/templates/templates-images/devices-dark.png")',
+  },
+  {
+    icon: <ExtensionIcon />,
+    title: "Strefa planszówkowa",
+    description:
+      "Chcesz spędzić chwilę ze znajomymi w ligowym klimacie, a może poznać nowych przywoływaczy? Zapraszamy na nasze autorskie planszowki, gdzie każdy znajdzie coś dla siebie!",
     imageDark:
       'url("/static/images/templates/templates-images/devices-dark.png")',
   },
@@ -61,17 +73,13 @@ export default function Features() {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
-            <Typography component="h2" variant="h4" color="text.primary">
-              Product features
-            </Typography>
             <Typography
-              variant="body1"
-              color="text.secondary"
-              sx={{mb: {xs: 2, sm: 4}}}
+              component="h2"
+              variant="h4"
+              color="text.primary"
+              sx={{marginBottom: 2}}
             >
-              Here you can provide a brief overview of the key features of the
-              product. For example, you could list the number of features, the
-              types of features, add-ons, or the benefits of the features.
+              Atrakcje na wiosce
             </Typography>
           </div>
           <Grid container item gap={1} sx={{display: {xs: "auto", sm: "none"}}}>
@@ -112,14 +120,11 @@ export default function Features() {
           >
             <Box
               sx={{
-                backgroundImage: (theme) =>
-                  theme.palette.mode === "light"
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark,
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
                 minHeight: 280,
               }}
+              className="image"
             />
             <Box sx={{px: 2, pb: 2}}>
               <Typography
@@ -132,23 +137,6 @@ export default function Features() {
               <Typography color="text.secondary" variant="body2" sx={{my: 0.5}}>
                 {selectedFeature.description}
               </Typography>
-              <Link
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  "& > svg": {transition: "0.2s"},
-                  "&:hover > svg": {transform: "translateX(2px)"},
-                }}
-              >
-                <span>Learn more</span>
-                <ChevronRightRoundedIcon
-                  fontSize="small"
-                  sx={{mt: "1px", ml: "2px"}}
-                />
-              </Link>
             </Box>
           </Box>
           <Stack
@@ -199,7 +187,7 @@ export default function Features() {
                         }
                         return selectedItemIndex === index
                           ? "primary.main"
-                          : "grey.700";
+                          : "secondary.700";
                       },
                     }}
                   >
@@ -220,26 +208,6 @@ export default function Features() {
                     >
                       {description}
                     </Typography>
-                    <Link
-                      color="primary"
-                      variant="body2"
-                      fontWeight="bold"
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        "& > svg": {transition: "0.2s"},
-                        "&:hover > svg": {transform: "translateX(2px)"},
-                      }}
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                    >
-                      <span>Learn more</span>
-                      <ChevronRightRoundedIcon
-                        fontSize="small"
-                        sx={{mt: "1px", ml: "2px"}}
-                      />
-                    </Link>
                   </Box>
                 </Box>
               </Card>

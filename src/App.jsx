@@ -1,8 +1,8 @@
-import CssBaseline from "@mui/material/CssBaseline";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import getLPTheme from "./components/landing-page/getLPTheme";
 import {Box} from "@mui/material";
 import AppAppBar from "./components/landing-page/components/AppAppBar";
-import getLPTheme from "./components/landing-page/getLPTheme";
 import {Outlet} from "react-router-dom";
 import Hero from "./components/landing-page/components/Hero";
 import tlo from "./assets/tlo.png";

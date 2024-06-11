@@ -135,10 +135,11 @@ const getDesignTokens = (mode) => ({
   typography: {
     fontFamily: ['"Open Sans", "Helvetica"'].join(","),
     h1: {
-      fontSize: 60,
-      fontWeight: 600,
-      lineHeight: 78 / 70,
-      letterSpacing: -0.2,
+      fontFamily: "Earth Orbiter Bold",
+      textShadow: "2px 2px 4px rgba(0, 0, 0, 0.80)",
+      fontSize: 30,
+      fontStyle: "normal",
+      fontWeight: 400,
     },
     h2: {
       fontSize: 48,
@@ -146,8 +147,14 @@ const getDesignTokens = (mode) => ({
       lineHeight: 1.2,
     },
     h3: {
+      fontFamily: "Earth Orbiter",
+      textShadow: "2px 2px 4px rgba(0, 0, 0, 0.80)",
       fontSize: 42,
-      lineHeight: 1.2,
+      fontStyle: "normal",
+      fontWeight: 400,
+      lineHeight: "22px",
+      textTransform: "uppercase",
+      color: "#E4BF62",
     },
     h4: {
       fontSize: 36,

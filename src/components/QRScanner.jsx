@@ -1,21 +1,16 @@
-import QrReader from "react-qr-scanner";
-import useLocalStorage from "use-local-storage";
+import {Scanner} from "@yudiel/react-qr-scanner";
+import useLocalStorageState from "use-local-storage-state";
 
-export const QRScanner = ({storageKey, handleClose}) => {
-  const [key, setKey] = useLocalStorage(storageKey);
+export const QRScanner = ({handleClose}) => {
+  const [teemo, setTeemo] = useLocalStorageState("teemo", {defaultValue: null});
+  var todaysDate = new Date();
 
-  return (
-    <QrReader
-      delay={200}
-      onError={() => {
-        console.log("error");
-      }}
-      onScan={(data) => {
-        if (data && data.text === "https://google.pl") {
-          setKey("set");
-          handleClose();
-        }
-      }}
-    />
-  );
+  const handleScan = (result) => {
+    if (result[0].rawValue === "Teemo") {
+      setTeemo({date: todaysDate});
+      handleClose();
+    }
+  };
+
+  return <Scanner onScan={handleScan} />;
 };

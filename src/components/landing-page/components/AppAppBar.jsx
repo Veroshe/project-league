@@ -1,5 +1,5 @@
 import * as React from "react";
-import PropTypes from "prop-types";
+import {useNavigate} from "react-router-dom";
 
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -22,6 +22,7 @@ const logoStyle = {
 
 function AppAppBar() {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -113,8 +114,11 @@ function AppAppBar() {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("highlights")}
+                  onClick={() => {
+                    navigate("/quiz");
+                  }}
                   sx={{py: "6px", px: "12px"}}
+                  href="/quiz"
                 >
                   <Typography variant="body2" color="text.primary">
                     Gra konwentowa
@@ -168,10 +172,5 @@ function AppAppBar() {
     </div>
   );
 }
-
-AppAppBar.propTypes = {
-  mode: PropTypes.oneOf(["dark", "light"]).isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
-};
 
 export default AppAppBar;

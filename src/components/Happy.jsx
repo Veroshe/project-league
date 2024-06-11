@@ -3,6 +3,7 @@ import happy1 from "../assets/1.png";
 import happy2 from "../assets/2.png";
 import happy3 from "../assets/3.png";
 import happy4 from "../assets/4.png";
+import useLocalStorageState from "use-local-storage-state";
 
 const HAPPY_ICONS = [happy1, happy2, happy3, happy4];
 
@@ -11,15 +12,12 @@ const getRandomInt = (max) => {
 };
 
 export const Happy = () => {
+  const [nick] = useLocalStorageState("nick", {defaultValue: null});
   return (
     <div className="happy">
       <div className="header-text">
-        <Typography
-          variant="h1"
-          color="secondary"
-          sx={{fontSize: "24px", marginBottom: "10px"}}
-        >
-          Gratulacje!
+        <Typography variant="h1" sx={{fontSize: "24px", marginBottom: "10px"}}>
+          Gratulacje {nick}!
         </Typography>
         <Typography variant="p" color="primary" className="list">
           Zadania wykonane!

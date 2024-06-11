@@ -1,53 +1,50 @@
 import "../App.scss";
-import {QuizCard} from "./QuizCard";
-import {Header} from "./Header";
-import {getToday} from "../helpers";
-import {QUESTS} from "../quests";
-import {InstaCard} from "./InstaCard";
-import useLocalStorage from "use-local-storage";
+import useLocalStorageState from "use-local-storage-state";
+import {NickInput} from "./NickInput";
+import Quests from "./Quests";
+import Stack from "@mui/material/Stack";
 import {Happy} from "./Happy";
-import {HeaderText} from "./HeaderText";
+var todaysDate = new Date();
+const isToday = (date) => {
+  return (
+    new Date(date).setHours(0, 0, 0, 0) === todaysDate.setHours(0, 0, 0, 0)
+  );
+};
+
+const checkIfAllDone = (insta, teemo, quiz, emoji) => {
+  if (
+    insta?.date &&
+    teemo?.date &&
+    quiz.find((el) => isToday(el.date))?.done &&
+    emoji.find((el) => isToday(el.date))?.done
+  ) {
+    return true;
+  }
+
+  return false;
+};
 
 function Quiz() {
-  const today = getToday();
-  const [key, setKey] = useLocalStorage(`quests all - ${today}`, 0);
+  const [nick] = useLocalStorageState("nick", {defaultValue: null});
+  const [insta] = useLocalStorageState("insta");
+  const [teemo] = useLocalStorageState("teemo");
+  const [quiz] = useLocalStorageState("quiz");
+  const [emoji] = useLocalStorageState("emoji");
 
-  const increaseQuestsCounter = () => {
-    setKey(key + 1);
-  };
+  const isAllDone = checkIfAllDone(insta, teemo, quiz, emoji);
 
-  if (key === 5) {
+  if (isAllDone) {
     return (
-      <div className="App">
-        <Header />
+      <Stack sx={{p: 4, paddingTop: 12}}>
         <Happy />
-      </div>
+      </Stack>
     );
   }
 
   return (
-    <div className="App">
-      <div className="questions">
-        <InstaCard
-          storageKey={`insta - ${today}`}
-          increaseQuestsCounter={increaseQuestsCounter}
-        />
-        {QUESTS[today] &&
-          QUESTS[today].map((quest, index) => {
-            return (
-              <QuizCard
-                key={quest.goodAnswer}
-                question={quest.question}
-                answers={quest.answers}
-                goodAnswer={quest.goodAnswer}
-                storageKey={quest.storageKey}
-                number={index + 2}
-                increaseQuestsCounter={increaseQuestsCounter}
-              />
-            );
-          })}
-      </div>
-    </div>
+    <Stack sx={{p: 4, paddingTop: 12}}>
+      {!nick ? <NickInput /> : <Quests />}
+    </Stack>
   );
 }
 

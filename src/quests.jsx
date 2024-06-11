@@ -134,3 +134,39 @@ export const QUESTS = {
     },
   ],
 };
+
+export const QUIZ_QUESTS = [
+  {
+    question: <p>Kto z tych cosplayerów NIE należy do Project: League</p>,
+    answers: ["Kanto", "Tyna", "Kamui", "Laf"],
+    goodAnswer: "Kamui",
+  },
+  {
+    question: <p>Kto NIE pojawił się na cinematicu &quot;The Call&quot;?</p>,
+    answers: ["Leona", "Camille", "Sejuani", "Kai'Sa"],
+    goodAnswer: "Camille",
+  },
+  {
+    question: <p>Który region jest spowity wiecznym śniegiem?</p>,
+    answers: ["Freljord", "Targon", "Ionia", "Ixtal"],
+    goodAnswer: "Freljord",
+  },
+];
+
+export const EMOJI_QUESTS = [
+  {
+    question: <ImageQuestion imgSrc={lulu} />,
+    answers: ["Syndra", "Soraka", "Lulu", "Zoe"],
+    goodAnswer: "Lulu",
+  },
+  {
+    question: <ImageQuestion imgSrc={caitlyn} />,
+    answers: ["Vi", "Lulu", "Morgan", "Caitlyn"],
+    goodAnswer: "Caitlyn",
+  },
+  {
+    question: <ImageQuestion imgSrc={sylas} />,
+    answers: ["Tryndamere", "Sett", "Sylas", "Ziggs"],
+    goodAnswer: "Sylas",
+  },
+];
