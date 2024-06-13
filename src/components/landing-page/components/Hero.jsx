@@ -60,7 +60,7 @@ export default function Hero() {
             useFlexGap
             sx={{pt: 2, width: {xs: "100%", sm: "auto"}}}
           >
-            <Button variant="contained" color="primary" href="/#/quiz">
+            <Button variant="contained" color="primary" href="/app/#/quiz">
               Podejmij wyzwanie
             </Button>
           </Stack>

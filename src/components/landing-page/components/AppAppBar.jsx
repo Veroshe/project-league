@@ -113,13 +113,8 @@ function AppAppBar() {
                     Wioskowicze
                   </Typography>
                 </MenuItem>
-                <MenuItem
-                  onClick={() => {
-                    navigate("/#/quiz");
-                  }}
-                  sx={{py: "6px", px: "12px"}}
-                >
-                  <a href="/#/quiz">
+                <MenuItem sx={{py: "6px", px: "12px"}}>
+                  <a href="/app/#/quiz">
                     <Typography variant="body2" color="text.primary">
                       Gra konwentowa
                     </Typography>
@@ -161,8 +156,8 @@ function AppAppBar() {
                     Wioskowicze
                   </MenuItem>
 
-                  <a href="/#/quiz">
-                    <MenuItem href="/#/quiz">Gra konwentowa</MenuItem>
+                  <a href="/app/#/quiz">
+                    <MenuItem>Gra konwentowa</MenuItem>
                   </a>
                   <Divider />
                 </Box>
