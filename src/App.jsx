@@ -14,7 +14,6 @@ export default function App() {
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <Box className="app-container">
-        <AppAppBar />
         <Outlet />
       </Box>
     </ThemeProvider>

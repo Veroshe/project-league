@@ -115,14 +115,15 @@ function AppAppBar() {
                 </MenuItem>
                 <MenuItem
                   onClick={() => {
-                    navigate("/quiz");
+                    navigate("/#/quiz");
                   }}
                   sx={{py: "6px", px: "12px"}}
-                  href="/quiz"
                 >
-                  <Typography variant="body2" color="text.primary">
-                    Gra konwentowa
-                  </Typography>
+                  <a href="/#/quiz">
+                    <Typography variant="body2" color="text.primary">
+                      Gra konwentowa
+                    </Typography>
+                  </a>
                 </MenuItem>
               </Box>
             </Box>
@@ -159,9 +160,10 @@ function AppAppBar() {
                   <MenuItem onClick={() => scrollToSection("testimonials")}>
                     Wioskowicze
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("highlights")}>
-                    Gra konwentowa
-                  </MenuItem>
+
+                  <a href="/#/quiz">
+                    <MenuItem href="/#/quiz">Gra konwentowa</MenuItem>
+                  </a>
                   <Divider />
                 </Box>
               </Drawer>

@@ -1,3 +1,7 @@
 .hero {
-    background-image: url("../../../assets/hero.png");
+    background-image: url("../../../assets/banner-big.png");
+
+        @media (max-width: 1000px) {
+                background-image: url("../../../assets/banner.png");
+            }
 }

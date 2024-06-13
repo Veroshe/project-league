@@ -16,6 +16,11 @@ import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import kogMaw from "../../../assets/Kog'Maw.png";
 import PeopleIcon from "@mui/icons-material/People";
 import ExtensionIcon from "@mui/icons-material/Extension";
+import matura from "../../../assets/atrakcje/matura.jpg";
+import strzelnica from "../../../assets/atrakcje/strzelnica.jpg";
+import yummi from "../../../assets/atrakcje/yummi.jpeg";
+import goscie from "../../../assets/atrakcje/goscie.jpeg";
+import plansz from "../../../assets/atrakcje/plansz.jpg";
 
 const items = [
   {
@@ -23,39 +28,35 @@ const items = [
     title: "Matura",
     description:
       "Śledzisz zacięcie scenę e-sportowa? Masz świra na punkcie ligowego lore? Sprawdź swoją wiedzę w tych, oraz wielu innych dziedzinach, dzięki przygotowanych przez nas i naszych gości maturach!",
-    imageDark: kogMaw,
+    imageDark: matura,
   },
   {
     icon: <TrackChangesIcon />,
     title: "Strzelnica",
     description:
       "Wciel się w rolę adc i poczuj dreszczyk emocji rozprawiając się z minionami na lini w świecie rzeczywistym!",
-    imageDark:
-      'url("/static/images/templates/templates-images/mobile-dark.png")',
+    imageDark: strzelnica,
   },
   {
     icon: <PetsIcon />,
     title: "Yuumi",
     description:
       "Celnosc ataków to podstawa! Sprawdź jak sobie poradzisz w starciu z Yuumi i rzutami do ruchomych celów!",
-    imageDark:
-      'url("/static/images/templates/templates-images/devices-dark.png")',
+    imageDark: yummi,
   },
   {
     icon: <PeopleIcon />,
     title: "Goście wioski",
     description:
       "W naszym programie czekają na ciebie spotkania i konkursy z gośćmi wioski. To świetna okazja aby poznać kulisy pracy stremeróww, youtuberów, a nawet casterów! Sprawdź rozpiskę godzinową i weź udzial w spotkaniach oraz quizach z nagrodami na żywo!",
-    imageDark:
-      'url("/static/images/templates/templates-images/devices-dark.png")',
+    imageDark: goscie,
   },
   {
     icon: <ExtensionIcon />,
     title: "Strefa planszówkowa",
     description:
       "Chcesz spędzić chwilę ze znajomymi w ligowym klimacie, a może poznać nowych przywoływaczy? Zapraszamy na nasze autorskie planszowki, gdzie każdy znajdzie coś dla siebie!",
-    imageDark:
-      'url("/static/images/templates/templates-images/devices-dark.png")',
+    imageDark: plansz,
   },
 ];
 
@@ -118,19 +119,19 @@ export default function Features() {
               mt: 4,
             }}
           >
-            <Box
-              sx={{
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                minHeight: 280,
+            <img
+              src={items[selectedItemIndex].imageDark}
+              style={{
+                width: "100%",
+                height: "16rem",
               }}
-              className="image"
             />
             <Box sx={{px: 2, pb: 2}}>
               <Typography
                 color="text.primary"
                 variant="body2"
                 fontWeight="bold"
+                sx={{pt: 2}}
               >
                 {selectedFeature.title}
               </Typography>
@@ -218,25 +219,27 @@ export default function Features() {
           item
           xs={12}
           md={6}
-          sx={{display: {xs: "none", sm: "flex"}, width: "100%"}}
+          sx={{
+            display: {xs: "none", sm: "flex"},
+            width: "100%",
+            alignItems: "center",
+          }}
         >
           <Card
             variant="outlined"
             sx={{
-              height: "100%",
+              height: "fit-content",
               width: "100%",
               display: {xs: "none", sm: "flex"},
               pointerEvents: "none",
             }}
           >
-            <Box
-              sx={{
-                m: "auto",
-                width: 420,
-                height: 500,
-                backgroundSize: "contain",
+            <img
+              src={items[selectedItemIndex].imageDark}
+              style={{
+                width: "100%",
+                height: "22rem",
               }}
-              className="image"
             />
           </Card>
         </Grid>

@@ -4,7 +4,7 @@
   background-color: #047c90;
   background-image: url("./assets/tlo.png");
   background-repeat: no-repeat;
-      background-size: cover;
+  background-size: cover;
   min-height: 100vh;
   height: 100%;
 }
@@ -15,7 +15,7 @@
 
 
 .disabled {
-opacity: 0.5;
+  opacity: 0.5;
 }
 
 
@@ -36,7 +36,7 @@ opacity: 0.5;
   .header-text {
     align-items: center;
   }
-  
+
   .happy-icon {
     margin-top: 50px;
   }
@@ -50,4 +50,24 @@ opacity: 0.5;
 
 .error {
   border-color: red !important;
+}
+
+
+.cool-link {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.80);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #e4bf62;
+  text-decoration: auto;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cool-image {
+  width: 100%;
 }

@@ -4,6 +4,8 @@ import {NickInput} from "./NickInput";
 import Quests from "./Quests";
 import Stack from "@mui/material/Stack";
 import {Happy} from "./Happy";
+import AppBarSmall from "./landing-page/components/AppBarSmall";
+
 var todaysDate = new Date();
 const isToday = (date) => {
   return (
@@ -35,16 +37,22 @@ function Quiz() {
 
   if (isAllDone) {
     return (
-      <Stack sx={{p: 4, paddingTop: 12}}>
-        <Happy />
-      </Stack>
+      <>
+        <AppBarSmall />
+        <Stack sx={{p: 4, paddingTop: 12}}>
+          <Happy />
+        </Stack>
+      </>
     );
   }
 
   return (
-    <Stack sx={{p: 4, paddingTop: 12}}>
-      {!nick ? <NickInput /> : <Quests />}
-    </Stack>
+    <>
+      <AppBarSmall />
+      <Stack sx={{p: 4, paddingTop: 12}}>
+        {!nick ? <NickInput /> : <Quests />}
+      </Stack>
+    </>
   );
 }
 
