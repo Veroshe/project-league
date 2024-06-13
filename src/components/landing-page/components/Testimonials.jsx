@@ -78,12 +78,7 @@ const userTestimonials = [
   },
   {
     image: kayl,
-    name: "Karina",
-    url: "https://www.instagram.com/kaylsstuff",
-  },
-  {
-    image: kayl,
-    name: "Karina",
+    name: "Kayl",
     url: "https://www.instagram.com/kaylsstuff",
   },
   {
