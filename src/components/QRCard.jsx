@@ -50,6 +50,7 @@ export const QRCard = ({storageKey}) => {
       </Modal>
       <Card sx={cardStyles} className={isDoneToday && "disabled"}>
         <CardContent>
+          <Typography variant="h3">Zadanie 4</Typography>
           <Typography>
             Znajdź Teemo z kodem QR i zeskanuj go (Psst! Poszukaj koło
             strzelnicy)

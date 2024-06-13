@@ -149,7 +149,7 @@ const getDesignTokens = (mode) => ({
     h3: {
       fontFamily: "Earth Orbiter",
       textShadow: "2px 2px 4px rgba(0, 0, 0, 0.80)",
-      fontSize: 42,
+      fontSize: 20,
       fontStyle: "normal",
       fontWeight: 400,
       lineHeight: "22px",

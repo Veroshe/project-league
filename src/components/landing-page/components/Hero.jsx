@@ -50,8 +50,8 @@ export default function Hero() {
             sx={{alignSelf: "center", width: {sm: "100%", md: "80%"}}}
             variant="subtitle1"
           >
-            Granie w lola jest fajne, jakiś tekst tutaj fajny trzeba dać! Jasiu
-            to król.
+            Sprawdź swoje umiejętności w naszej grze konwentowej i wygraj
+            świetne nagrody!
           </Typography>
           <Stack
             direction={{xs: "column", sm: "row"}}
@@ -72,7 +72,7 @@ export default function Hero() {
             alignSelf: "center",
             height: {xs: 200, sm: 700},
             width: "100%",
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             borderRadius: "10px",
             outline: "1px solid",
             outlineColor:

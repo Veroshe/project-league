@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import {cardStyles, cardActionsStyles} from "./cardStyles";
 import useLocalStorageState from "use-local-storage-state";
 import {EMOJI_QUESTS} from "../quests";
+import Typography from "@mui/material/Typography";
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -80,11 +81,11 @@ export const EmojiCard = () => {
       <Card sx={cardStyles} className={todaysQuestion.done && "disabled"}>
         <CardContent>
           <FormControl error={error}>
+            <Typography variant="h3">Zadanie 3</Typography>
             <FormLabel
               id={quizQuestion.question}
               color="primary"
               sx={{color: "#fff"}}
-              variant="h3"
             >
               {quizQuestion.question}
             </FormLabel>

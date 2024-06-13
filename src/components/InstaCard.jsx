@@ -37,6 +37,7 @@ export const InstaCard = () => {
   return (
     <Card sx={cardStyles} className={isDoneToday && "disabled"}>
       <CardContent>
+        <Typography variant="h3">Zadanie 1</Typography>
         <Typography>Zaobserwuj nas na Instagramie!</Typography>
       </CardContent>
       <CardActions sx={cardActionsStyles}>
