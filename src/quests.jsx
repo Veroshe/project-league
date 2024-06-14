@@ -151,6 +151,51 @@ export const QUIZ_QUESTS = [
     answers: ["Freljord", "Targon", "Ionia", "Ixtal"],
     goodAnswer: "Freljord",
   },
+  {
+    question: (
+      <p>
+        Którzy z tych championów mieli premierę podczas pierwszej edycji Spirit
+        Blossom?
+      </p>
+    ),
+    answers: [
+      "Lilia & Sett",
+      "Lilia & Yone",
+      "Aphelios & Sett",
+      "Lilia & Seraphine",
+    ],
+    goodAnswer: "Lilia & Yone",
+  },
+  {
+    question: <p>Która z tych postaci NIE jest yordlem?</p>,
+    answers: ["Amumu", "Corgi", "Kled", "Nunu i Willump"],
+    goodAnswer: "Nunu i Willump",
+  },
+  {
+    question: <p>Gdzie odbywały się mistrzostwa w 2022?</p>,
+    answers: ["Washington", "Atlanta", "San Francisco", "New York"],
+    goodAnswer: "San Francisco",
+  },
+  {
+    question: <p>W angielskiej wersji językowej jaki akcent posiada Fiora?</p>,
+    answers: ["Hiszpański", "Francuski", "Włoski", "Niemiecki"],
+    goodAnswer: "Francuski",
+  },
+  {
+    question: <p>Kogo/co Sett kocha najbardziej?</p>,
+    answers: ["Swoją mamę", "Walkę na pięści", "Ramen", "Apheliosa"],
+    goodAnswer: "Swoją mamę",
+  },
+  {
+    question: <p>W serialu Arcane “Vi” jest zdrobnieniem od:</p>,
+    answers: ["Victoria", "Violet", "Vicious", "Violence"],
+    goodAnswer: "Violet",
+  },
+  {
+    question: <p>Kto z członków Project: League wykonał cosplay Briar?</p>,
+    answers: ["Tyna", "Wero", "Shappi", "Tul"],
+    goodAnswer: "Tyna",
+  },
 ];
 
 export const EMOJI_QUESTS = [
@@ -168,5 +213,20 @@ export const EMOJI_QUESTS = [
     question: <ImageQuestion imgSrc={sylas} />,
     answers: ["Tryndamere", "Sett", "Sylas", "Ziggs"],
     goodAnswer: "Sylas",
+  },
+  {
+    question: <ImageQuestion imgSrc={fizz} />,
+    answers: ["Fizz", "Nami", "Nautilus", "Nilah"],
+    goodAnswer: "Fizz",
+  },
+  {
+    question: <ImageQuestion imgSrc={evelynn} />,
+    answers: ["Vayne", "Evelynn", "Elise", "Bel'Veth"],
+    goodAnswer: "Evelynn",
+  },
+  {
+    question: <ImageQuestion imgSrc={bard} />,
+    answers: ["Wukong", "Maokai", "Milo", "Bard"],
+    goodAnswer: "Bard",
   },
 ];
