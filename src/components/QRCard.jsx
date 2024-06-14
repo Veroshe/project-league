@@ -52,8 +52,9 @@ export const QRCard = ({storageKey}) => {
         <CardContent>
           <Typography variant="h3">Zadanie 4</Typography>
           <Typography>
-            Znajdź Teemo z kodem QR i zeskanuj go (Psst! Poszukaj koło
-            strzelnicy)
+            Znajdź Teemo z kodem QR i zeskanuj go. Ostatnio widziano go
+            buszującego w alejce artystów - hala 5A, przy stoisku Project League
+            (nr M41).
           </Typography>
         </CardContent>
         <CardActions sx={cardActionsStyles}>
